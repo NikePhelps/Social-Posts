@@ -1,0 +1,9 @@
+<div class="background">
+<h1>My Thoughts</h1>
+
+<button (click)= "toggleDisplay()">New Post</button>
+<div class="postSection">
+<post *ngFor="let social of socialPosts; index as i" [social]="social" (onRemovePost)="removePost($event);"></post>
+</div>
+<post-form (onAddPost)="addPost($event);" [socialPosts]= "socialPosts" *ngIf= "!shouldBeShown"></post-form>
+</div>
